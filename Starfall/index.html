@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+
+        /* Кнопка с заданными координатами */
+        .my-button1 {
+            position: absolute;  /* Кнопка будет расположена относительно родителя (контейнера) */
+            top: 500px;  /* Отступ от верхней границы */
+            left: 172px; /* Отступ от левой границы */
+            padding: 40px 40px;
+
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-image: url('jpg/30.jpg');
+        }
+        .my-button2 {
+            position: absolute;  /* Кнопка будет расположена относительно родителя (контейнера) */
+            top: 500px;  /* Отступ от верхней границы */
+            left: 80.6px; /* Отступ от левой границы */
+            padding: 40px 40px;
+
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-image: url('jpg/31.jpg');
+        }
+        .my-button3 {
+            position: absolute;  /* Кнопка будет расположена относительно родителя (контейнера) */
+            top: 500px;  /* Отступ от верхней границы */
+            left: 264px; /* Отступ от левой границы */
+            padding: 40px 40px;
+
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-image: url('jpg/57.jpg');
+        }
+
+        .showMessageBtn {
+            position: absolute;  /* Кнопка будет расположена относительно родителя (контейнера) */
+            top: 150px;  /* Отступ от верхней границы */
+            left: 83px; /* Отступ от левой границы */
+            padding: 128px 128px;
+
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-image: url('jpg/p.jpg');
+        }
+
+        /* Устанавливаем фиксированный размер для всей страницы */
+        html, body {
+            width: 422px;  /* Ширина страницы */
+            height: 625px; /* Высота страницы */
+            margin: 0;     /* Убираем отступы */
+            padding: 0;    /* Убираем паддинги */
+            overflow: hidden;  /* Убираем полосы прокрутки */
+        }
+
+        /* Контейнер для содержимого */
+        .container {
+            width: 100%;  /* Ширина контейнера равна ширине страницы */
+            height: 100%; /* Высота контейнера равна высоте страницы */
+            background-color: #000000; /* Цвет фона контейнера */
+            display: flex;  /* Используем flexbox для центрирования содержимого */
+            justify-content: center;  /* Горизонтальное выравнивание */
+            align-items: center;  /* Вертикальное выравнивание */
+        }
+
+        /* Пример содержимого */
+        .content {
+            text-align: center;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .balance-container {
+
+            font-size: 24px;
+            color: white;
+            background-color: black;
+            padding: 10px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute; /* Абсолютное позиционирование */
+            top: 20px; /* Расположение от верхнего края страницы */
+            left: 20px; /* Расположение от левого края страницы */
+        }
+
+
+        /* Контейнер для отображения баланса */
+        .balance-container {
+            font-size: 24px;
+            color: white;
+            background-color: black;
+            padding: 10px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute; /* Абсолютное позиционирование */
+            top: 20px; /* Расположение от верхнего края страницы */
+            left: 20px; /* Расположение от левого края страницы */
+        }
+        #balanceValue {
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <h1></h1>
+
+        </div>
+    </div>
+    <div class="container">
+        <!-- Кнопка -->
+        <button class="my-button1"></button>
+    </div>
+    <div class="container">
+        <!-- Кнопка -->
+        <button class="my-button2"></button>
+    </div>
+    <div class="container">
+        <!-- Кнопка -->
+        <button class="my-button3"></button>
+    </div>
+    <div class="container">
+        <button class="showMessageBtn" id="showMessageBtn"> </button>
+    </div>
+
+    <!-- Контейнер для отображения баланса -->
+    <div class="balance-container">
+        <span>Balance:</span>
+        <span id="balanceValue">0</span>
+    </div>
+
+    <script src="script.js"></script>
+
+
+
+
+
+
+</body>
+</html>
