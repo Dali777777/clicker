@@ -1,8 +1,6 @@
 
 
 
-
-
 // Переменная для хранения баланса
 let Balance = 0;
 
@@ -14,6 +12,7 @@ const balanceValue = document.getElementById("balanceValue");
 function increaseBalance() {
     Balance += 1; // Прибавляем 1 к балансу
     balanceValue.textContent = Balance; // Обновляем отображение баланса на странице
+
 }
 
 // Добавляем обработчик события на кнопку
