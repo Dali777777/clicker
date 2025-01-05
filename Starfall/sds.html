@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Показ MP4 с шансом 0.2</title>
+    <style>
+        .my-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative; /* Убедимся, что позиционирование кнопки относительно её контейнера */
+        }
+        .my-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Контейнер для видео */
+        #video-container {
+            display: none; /* Изначально скрыто */
+            position: absolute; /* Позиционируем относительно родителя */
+            top: 0; /* Сначала на тех же координатах, где была кнопка */
+            left: 0;
+            z-index: 10; /* Устанавливаем видео поверх других элементов */
+        }
+
+        video {
+            width: 256px; /* Ширина видео */
+            height: 256px; /* Высота видео */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Кнопка -->
+<button class="my-button" id="show-button" onclick="showVideo(event)">Нажми меня!</button>
+
+<!-- Контейнер для видео -->
+<div id="video-container">
+    <video id="video" controls>
+        <source src="wheel.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+</div>
+
+<script>
+    function showVideo(event) {
+        // Генерируем случайное число от 0 до 1
+        const randomChance = Math.random();
+
+        // Если случайное число меньше или равно 0.2, показываем видео
+        if (randomChance <= 0.2) {
+            // Получаем координаты кнопки относительно страницы
+            const buttonRect = event.target.getBoundingClientRect();
+
+            // Позиционируем контейнер с видео на координатах кнопки
+            const videoContainer = document.getElementById('video-container');
+            videoContainer.style.top = buttonRect.top + window.scrollY + 'px';
+            videoContainer.style.left = buttonRect.left + window.scrollX + 'px';
+
+            // Показываем видео
+            videoContainer.style.display = 'block';
+
+            // Воспроизведение видео
+            const video = document.getElementById('video');
+            video.play();
+
+            // После окончания видео скрываем его и снова показываем кнопку
+            video.onended = function() {
+                videoContainer.style.display = 'none';
+                document.getElementById('show-button').style.display = 'block';
+            };
+
+            // Скрываем кнопку
+            document.getElementById('show-button').style.display = 'none';
+        } else {
+            // Если шанс больше 0.2, то ничего не происходит
+            console.log('Шанс не сработал.');
+        }
+    }
+</script>
+
+</body>
+</html>
