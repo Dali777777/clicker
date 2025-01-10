@@ -10,7 +10,7 @@ const balanceValue = document.getElementById("balanceValue");
 
 // Функция для увеличения баланса на 1
 function increaseBalance() {
-    Balance += 11 // Прибавляем 1 к балансу
+    Balance += 100 // Прибавляем 1 к балансу
     balanceValue.textContent = Balance; // Обновляем отображение баланса на странице
 
 }
